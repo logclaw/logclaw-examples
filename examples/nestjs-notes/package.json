@@ -1,0 +1,29 @@
+{
+  "name": "nestjs-notes",
+  "version": "1.0.0",
+  "description": "NestJS Notes — LogClaw OTel Logging Example",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "dev": "nest start --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.4.0",
+    "@nestjs/core": "^10.4.0",
+    "@nestjs/platform-express": "^10.4.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "@opentelemetry/api-logs": "^0.53.0",
+    "@opentelemetry/sdk-logs": "^0.53.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.53.0",
+    "@opentelemetry/resources": "^1.26.0",
+    "@opentelemetry/semantic-conventions": "^1.27.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^10.4.0",
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0",
+    "@types/express": "^4.17.21"
+  }
+}

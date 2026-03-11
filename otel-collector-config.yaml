@@ -1,0 +1,26 @@
+# OpenTelemetry Collector configuration for LogClaw examples.
+# Receives OTLP logs from example apps and forwards them to LogClaw.
+#
+# Environment variables:
+#   LOGCLAW_ENDPOINT  — LogClaw OTLP endpoint (default: https://otel.logclaw.ai)
+#   LOGCLAW_API_KEY   — Your LogClaw project API key (lc_proj_...)
+
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318
+
+exporters:
+  otlphttp:
+    endpoint: ${LOGCLAW_ENDPOINT:-https://otel.logclaw.ai}
+    headers:
+      x-logclaw-api-key: ${LOGCLAW_API_KEY:-}
+  debug:
+    verbosity: basic
+
+service:
+  pipelines:
+    logs:
+      receivers: [otlp]
+      exporters: [otlphttp, debug]

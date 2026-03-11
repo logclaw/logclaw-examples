@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+# OTel Java Agent reads these env vars automatically:
+#   OTEL_EXPORTER_OTLP_ENDPOINT — Collector endpoint
+#   OTEL_EXPORTER_OTLP_PROTOCOL — http/protobuf (default)
+#   OTEL_SERVICE_NAME           — Service name
+#
+# No OTel SDK code needed — the Java agent auto-instruments everything.
